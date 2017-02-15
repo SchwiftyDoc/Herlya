@@ -1,8 +1,12 @@
 let http = require('http')
 let server = http.createServer()
+let url = require('url')
 
 server.on('request', (request, response) => {
-    console.log('Nouvelle requête')
+    response.writeHead(200, {
+        'Content-type' : 'text/html; charset=utf-8'
+    })
+    response.end('Salut comment ça va?')
 })
 
 server.listen(80)
