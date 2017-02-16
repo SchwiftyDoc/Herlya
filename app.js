@@ -2,7 +2,7 @@ let http = require('http')
 let server = http.createServer()
 let url = require('url')
 
-// Test 5 pour le GithubHook avec un console log
+// Test 6 pour le GithubHook avec un console log
 console.log('GitHub Hook!')
 
 server.on('request', (request, response) => {
