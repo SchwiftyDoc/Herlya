@@ -1,12 +1,7 @@
-let http = require('http')
-let server = http.createServer()
-let url = require('url')
+let app = require('express')()
 
-server.on('request', (request, response) => {
-  response.writeHead(200, {
-    'Content-type' : 'text/html; charset=utf-8'
-  })
-  response.end('Salut comment ça va lol?')
+app.get('/', (request, response) => {
+  response.send('Salut')
 })
 
 server.listen(80)
