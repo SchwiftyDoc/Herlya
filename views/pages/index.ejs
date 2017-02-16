@@ -7,7 +7,7 @@
 <body>
     <canvas id="gameView" width="1280" height="720"></canvas>
 
-    <div class="hidden">
+    <div id="toLoad" class="hidden">
         <img src="/assets/svg/perso.svg" />
     </div>
 
@@ -15,12 +15,6 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
-<script type="text/javascript">
-    var image = new Image()
-    var canvas = document.getElementById('gameView')
-    var ctx = canvas.getContext('2d')
-    image.src = "/assets/svg/perso.svg"
-    ctx.drawImage(image, 0, 0, 100, 200)
-</script>
+<script src="/assets/js/main.js" ></script>
 </body>
 </html>

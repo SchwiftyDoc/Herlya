@@ -1,8 +1,8 @@
 /**
  * Created by Coreuh on 12-02-17.
  */
-let configuration = include('config.json')
-console.log(configuration.canvasId)
+/*let configuration = include('config.json')
+console.log(configuration.canvasId)*/
 
 let canvas = document.getElementById('gameView')
 let ctx = canvas.getContext('2d')
