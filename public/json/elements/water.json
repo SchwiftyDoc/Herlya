@@ -1,0 +1,16 @@
+{
+  "image" : "water.svg",
+  "width" : 30,
+  "height" : 42,
+  "type" : 1,
+  "usable" : true,
+  "hitboxes" : [
+    {
+      "form" : "rect",
+      "x1" : 0,
+      "y1" : 0,
+      "x2" : 30,
+      "y2" : 42
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "image": "perso.svg",
+  "width": 146,
+  "height": 419,
+  "element": "water",
+  "spells": [
+    {
+      "name": "Badass Healing",
+      "action": "heal",
+      "range": 150,
+      "value": 30,
+      "targets": "allies"
+    }
+  ],
+  "hitboxes": [
+    {
+      "form": "rect",
+      "x1": 0,
+      "y1": 0,
+      "x2": 30,
+      "y2": 42
+    }
+  ]
+}
