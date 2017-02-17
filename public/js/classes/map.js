@@ -1,5 +1,5 @@
+let mapData
 Map = function (name) {
-  let mapData
   $.getJSON('/assets/maps/' + name + '.json', function (data) {
     console.log(data)
     mapData = data
