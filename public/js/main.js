@@ -12,15 +12,11 @@ image.src = "/assets/svg/perso.svg"
 // Test draw char
 let character = ctx.drawImage(image, 0, 0, 100, 200)*/
 
-// Test draw map
-let map = new Map("standard")
-
 window.onload = function() {
   var canvas = document.getElementById('gameView')
   var ctx = canvas.getContext('2d')
 
-  canvas.width  = map.getWidth() * 32
-  canvas.height = map.getHeight() * 32
+  // Test draw map
+  let map = new Map("standard", canvas)
 
-  map.drawMap(ctx)
 }
