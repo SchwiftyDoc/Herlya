@@ -1,7 +1,7 @@
-let tileset = function(url) {
+Tileset = function(url) {
   this.image = new Image()
   this.image.referenceDuTileset = this
-  this.image.onload() = function() {
+  this.image.onload = function() {
     if (!this.complete)
       throw new Error("Impossible de charger le Tileset : " + url)
     // Largeur du tileset en tiles
@@ -10,7 +10,7 @@ let tileset = function(url) {
   this.image.src = "/assets/tilesets/chemin.png"
 }
 
-tileset.prototype.dessinerTile(num, ctx, xDest, yDest) {
+Tileset.prototype.drawTile = function (num, ctx, xDest, yDest) {
   let xSourceEnTiles = num % this.largeur;
   if(xSourceEnTiles == 0) xSourceEnTiles = this.largeur;
   let ySourceEnTiles = Math.ceil(num / this.largeur);
