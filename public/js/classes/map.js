@@ -1,6 +1,7 @@
 Map = function (name) {
   let mapData
   $.getJSON('/assets/maps/' + name + '.json', function (data) {
+    console.log(data)
     mapData = data
     this.tileset = new Tileset(data.tileset)
     this.terrain = data.terrain
