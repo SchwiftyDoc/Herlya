@@ -1,4 +1,8 @@
-Character = function (name, x, y, width, height, team) {
+/**
+ * Created by corentin on 27/02/17.
+ */
+
+Player = function (name, x, y, width, height, team) {
   let self = this
   this.x = x
   this.y = y
@@ -15,7 +19,7 @@ Character = function (name, x, y, width, height, team) {
   })
 }
 
-Character.prototype.correctRatio = () => {
+Player.prototype.correctRatio = () => {
   if ((this.width / this.height) != (this.imageWidth / this.imageHeight)){
     console.log('true')
     this.height = this.width * (this.imageWidth / this.imageHeight)

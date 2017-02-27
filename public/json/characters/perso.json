@@ -1,4 +1,5 @@
 {
+  "name": "perso",
   "image": "perso.svg",
   "width": 146,
   "height": 419,
@@ -17,8 +18,8 @@
       "form": "rect",
       "x1": 0,
       "y1": 0,
-      "x2": 30,
-      "y2": 42
+      "x2": 146,
+      "y2": 419
     }
   ]
 }

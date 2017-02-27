@@ -17,6 +17,5 @@ let canvas = document.getElementById('gameView')
 let context = canvas.getContext('2d')
 
 window.onload = function() {
-  // Test draw map
   map = new Map("standard", canvas)
 }

@@ -2,6 +2,12 @@
   "background" : "background.jpg",
   "width" : 1280,
   "height" : 720,
+  "players" : [
+    {
+      "id" : 1,
+      "position" : {"x" : O, "y" : 200}
+    }
+  ],
   "elements" : [
     {
       "name" : "rock",
