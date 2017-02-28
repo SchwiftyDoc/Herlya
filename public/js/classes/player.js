@@ -35,7 +35,9 @@ Player.prototype.correctRatio = function () {
 }
 
 Player.prototype.move = function(dx, dy) {
-  if(this.x + dx >= 0 && this.y + dy >= 0) {
+  if(this.x + dx >= 0 && this.y + dy >= 0
+      && this.x + this.width + dx <= map.width
+      && this.y + this.height + dy <= map.height) {
     this.x += dx;
     this.y += dy
     this.map.update()

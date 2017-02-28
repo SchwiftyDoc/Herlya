@@ -12,6 +12,9 @@ Map = function (name, elementsCanvas, playersCanvas) {
   // Get the JSON datas
   $.getJSON('/assets/json/maps/' + name + '.json', (data) => {
 
+    this.width = data.width
+    this.height = data.height
+
     // Set the Elements Canvas properties
     elementsCanvas.style.backgroundImage = "url(/assets/img/maps/" + data.background + ")"
     elementsCanvas.width  = data.width
