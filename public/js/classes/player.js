@@ -2,6 +2,13 @@
  * Created by corentin on 27/02/17.
  */
 
+var DIRECTION = {
+  "TOP"   : 0,
+  "RIGHT" : 1,
+  "BOTTOM": 2,
+  "LEFT"  : 3
+}
+
 Player = function (map, name, x, y, width, height, team) {
   this.map = map
   let self = this
@@ -12,6 +19,7 @@ Player = function (map, name, x, y, width, height, team) {
   this.team = team
   this.image = new Image()
   $.getJSON('/assets/json/characters/' + name + '.json', (data) => {
+    self.hitboxes = data.hitboxes
     self.image.src = '/assets/svg/characters/' + data.image
     self.element = data.element;
     self.imageWidth = data.width
@@ -35,11 +43,25 @@ Player.prototype.correctRatio = function () {
 }
 
 Player.prototype.move = function(dx, dy) {
-  if(this.x + dx >= 0 && this.y + dy >= 0
-      && this.x + this.width + dx <= map.width
-      && this.y + this.height + dy <= map.height) {
-    this.x += dx;
-    this.y += dy
-    this.map.update()
+  newX = this.x + dx
+  newY = this.y + dy
+  // Check if is in the Map
+  if (newX >= 0 && newY + dy >= 0
+      && newX + this.width <= map.width
+      && newY + this.height <= map.height) {
+    // Check collision with map elements
+    /*for (let element in this.map.elements) {
+      let hitbox = {
+        "x" : this.x + dx,
+        "y" : this.y + dy,
+        "width" : this.width,
+        "height" : this.height
+      }
+      console.log(hitbox)
+      if (!collision(element, hitbox)) {*/
+        this.x += dx
+        this.y += dy
+      /*}
+    }*/
   }
 }

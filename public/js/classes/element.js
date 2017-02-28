@@ -1,15 +1,8 @@
-var DIRECTION = {
-  "TOP"   : 0,
-  "RIGHT" : 1,
-  "BOTTOM": 2,
-  "LEFT"  : 3
-}
-
 Element = function(name, x, y, width, height, map) {
   this.map = map
   let self = this
-  this.width = parseInt(width)
-  this.height = parseInt(height)
+  this.width = width
+  this.height = height
   this.x = x
   this.y = y
   this.image = new Image()
@@ -37,6 +30,7 @@ Element.prototype.correctRatio = () => {
 }
 
 Element.prototype.collision = (other) => {
-  if (other.isPrototypeOf(Element) === false || other.isPrototypeOf(Character) === false)
+  if (other.isPrototypeOf(Element) === false || other.isPrototypeOf(Player) === false)
     throw Error("Impossible de gérer des collisions avec autre chose que des éléments")
+  other.setPro
 }

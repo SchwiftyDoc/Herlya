@@ -24,6 +24,36 @@ window.onload = function() {
     movePlayer()
   })
 
+  // Right click management :
+  let target = {}
+  let player = {}
+  $("#playersView").mousedown(function (e) {
+    if(event.which == 3) {
+      e.preventDefault()
+      // Set Target coords
+      let parentOffset = $(this).parent().offset()
+      target.x = e.pageX - parentOffset.left - map.players[0].width / 2;
+      target.y = e.pageY - parentOffset.top - map.players[0].height / 2;
+      // Set User coors
+      setInterval(function() {
+        if (player.x != target.x
+            || player.y != target.y) {
+          console.log(player.x + ':' + player.y)
+          if (player.x < target.x)
+            map.players[0].move(1, 0)
+          if (player.y < target.y)
+            map.players[0].move(0, 1)
+          if (player.x > target.x)
+            map.players[0].move(-1, 0)
+          if (player.y > target.y)
+            map.players[0].move(0, -1)
+          player.x = map.players[0].x
+          player.y = map.players[0].y
+        }
+      }, 50)
+    }
+  })
+
   let movePlayer = function() {
     setInterval(function() {
       if (keys[37])
@@ -34,7 +64,7 @@ window.onload = function() {
         map.players[0].move(1, 0)
       if (keys[40])
         map.players[0].move(0, 1)
-    }, 20)
+    }, 1000)
   }
 
 }
