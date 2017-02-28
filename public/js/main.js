@@ -29,7 +29,6 @@ window.onload = function() {
   let player = {}
   $("#playersView").mousedown(function (e) {
     if(event.which == 3) {
-      e.preventDefault()
       // Set Target coords
       let parentOffset = $(this).parent().offset()
       target.x = e.pageX - parentOffset.left - map.players[0].width / 2;
@@ -38,7 +37,6 @@ window.onload = function() {
       setInterval(function() {
         if (player.x != target.x
             || player.y != target.y) {
-          console.log(player.x + ':' + player.y)
           if (player.x < target.x)
             map.players[0].move(1, 0)
           if (player.y < target.y)
