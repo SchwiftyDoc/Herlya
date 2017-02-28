@@ -40,13 +40,3 @@ Element.prototype.collision = (other) => {
   if (other.isPrototypeOf(Element) === false || other.isPrototypeOf(Character) === false)
     throw Error("Impossible de gérer des collisions avec autre chose que des éléments")
 }
-
-Element.prototype.move = function(dx, dy) {
-  if(this.x + dx >= 0 && this.y + dy >= 0) {
-    this.x += dx
-    this.y += dy
-    this.current = {}
-    this.current = context.drawImage(this.image, this.x, this.y, this.width, this.height)
-    this.map.update()
-  }
-}

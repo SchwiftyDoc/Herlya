@@ -17,6 +17,10 @@ Map = function (name, elementsCanvas, playersCanvas) {
     elementsCanvas.width  = data.width
     elementsCanvas.height = data.height
 
+    // Set the Players Canvas properties
+    playersCanvas.width = data.width
+    playersCanvas.height = data.height
+
     // Initialization of Elements
     for (let element of data.elements) {
       for (let el of element.comps) {
@@ -26,7 +30,7 @@ Map = function (name, elementsCanvas, playersCanvas) {
 
     // Initialization of players
     for (let player of data.players) {
-      this.addPlayer(new Player(this, "perso", player.position.x, player.position.y))
+      this.addPlayer(new Player(this, "perso", player.position.x, player.position.y, 40, 160))
     }
 
     // First Draw
@@ -46,9 +50,7 @@ Map.prototype.drawElements = function() {
 }
 
 Map.prototype.addPlayer = function(player) {
-  for (var player of this.players) {
-    player.draw(this.plCtx)
-  }
+  this.players.push(player)
 }
 
 Map.prototype.drawPlayers = function() {
@@ -66,7 +68,7 @@ Map.prototype.getPlCtx = function() {
 }
 
 Map.prototype.update = function() {
-  this.drawElements()
+  this.plCtx.clearRect(0, 0, this.plCanvas.width, this.plCanvas.height)
   this.drawPlayers()
 }
 

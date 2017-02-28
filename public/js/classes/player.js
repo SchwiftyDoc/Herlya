@@ -2,11 +2,13 @@
  * Created by corentin on 27/02/17.
  */
 
-Player = function (map, name, x, y, team) {
+Player = function (map, name, x, y, width, height, team) {
   this.map = map
   let self = this
   this.x = x
   this.y = y
+  this.width = width
+  this.height = height
   this.team = team
   this.image = new Image()
   $.getJSON('/assets/json/characters/' + name + '.json', (data) => {
@@ -14,11 +16,16 @@ Player = function (map, name, x, y, team) {
     self.element = data.element;
     self.imageWidth = data.width
     self.imageHeight = data.height
-    self.correctRatio()
+    //self.correctRatio()
     self.image.onload = function() {
-      context.drawImage(self.image, self.x, self.y, self.width, self.height)
+      console.log(self.image.src)
+      map.getPlCtx().drawImage(self.image, self.x, self.y, self.width, self.height)
     }
   })
+}
+
+Player.prototype.draw = function(context) {
+  context.drawImage(this.image, this.x, this.y, this.width, this.height)
 }
 
 Player.prototype.correctRatio = function () {
