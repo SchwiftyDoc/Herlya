@@ -25,6 +25,7 @@ window.onload = function() {
   })
 
   // Right click management :
+  let interval = false
   let target = {}
   let player = {}
   $("#playersView").mousedown(function (e) {
@@ -34,7 +35,8 @@ window.onload = function() {
       target.x = e.pageX - parentOffset.left - map.players[0].width / 2;
       target.y = e.pageY - parentOffset.top - map.players[0].height / 2;
       // Set User coors
-      setInterval(function() {
+      clearInterval(interval)
+      interval = setInterval(function() {
         if (player.x != target.x
             || player.y != target.y) {
           if (player.x < target.x)
@@ -48,7 +50,7 @@ window.onload = function() {
           player.x = map.players[0].x
           player.y = map.players[0].y
         }
-      }, 50)
+      }, 20)
     }
   })
 

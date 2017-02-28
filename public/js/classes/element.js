@@ -23,6 +23,8 @@ Element.prototype.adjustHitboxes = function() {
   for (let i in this.hitboxes) {
     this.hitboxes[i].x += this.x
     this.hitboxes[i].y += this.y
+    this.hitboxes[i].width = this.width
+    this.hitboxes[i].height = this.height
   }
 }
 

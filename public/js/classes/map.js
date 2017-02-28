@@ -33,7 +33,7 @@ Map = function (name, elementsCanvas, playersCanvas) {
 
     // Initialization of players
     for (let player of data.players) {
-      this.addPlayer(new Player(this, "perso", player.position.x, player.position.y, 20, 80))
+      this.addPlayer(new Player(this, "perso", player.position.x, player.position.y, 10, 20))
     }
 
     // First Draw
