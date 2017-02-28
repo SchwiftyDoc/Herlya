@@ -1,5 +1,4 @@
 Element = function(name, x, y, width, height, map) {
-  this.map = map
   let self = this
   this.width = width
   this.height = height
@@ -16,7 +15,15 @@ Element = function(name, x, y, width, height, map) {
     self.image.onload = function() {
       self.draw(map.getElCtx())
     }
+    self.adjustHitboxes()
   })
+}
+
+Element.prototype.adjustHitboxes = function() {
+  for (let i in this.hitboxes) {
+    this.hitboxes[i].x += this.x
+    this.hitboxes[i].y += this.y
+  }
 }
 
 Element.prototype.draw = function(context) {
@@ -32,5 +39,5 @@ Element.prototype.correctRatio = () => {
 Element.prototype.collision = (other) => {
   if (other.isPrototypeOf(Element) === false || other.isPrototypeOf(Player) === false)
     throw Error("Impossible de gérer des collisions avec autre chose que des éléments")
-  other.setPro
+  //other.setPro
 }

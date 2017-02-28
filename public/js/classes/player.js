@@ -50,18 +50,24 @@ Player.prototype.move = function(dx, dy) {
       && newX + this.width <= map.width
       && newY + this.height <= map.height) {
     // Check collision with map elements
-    /*for (let element in this.map.elements) {
-      let hitbox = {
-        "x" : this.x + dx,
-        "y" : this.y + dy,
-        "width" : this.width,
-        "height" : this.height
+    let hitbox = [
+      {
+        "form": "rect",
+        "x": this.x + dx,
+        "y": this.y + dy,
+        "width": this.width,
+        "height": this.height
       }
-      console.log(hitbox)
-      if (!collision(element, hitbox)) {*/
-        this.x += dx
-        this.y += dy
-      /*}
-    }*/
+    ]
+    let crashed = false
+    for (let i in this.map.elements) {
+      if (collision(this.map.elements[i].hitboxes, hitbox)) {
+        crashed = true
+      }
+    }
+    if (!crashed) {
+      this.x += dx
+      this.y += dy
+    }
   }
 }

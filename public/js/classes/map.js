@@ -44,6 +44,7 @@ Map = function (name, elementsCanvas, playersCanvas) {
 
 Map.prototype.addElement = function(element) {
   this.elements.push(element)
+  console.log(element)
 }
 
 Map.prototype.drawElements = function() {
