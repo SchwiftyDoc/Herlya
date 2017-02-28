@@ -5,7 +5,9 @@
   "players" : [
     {
       "id" : 1,
-      "position" : {"x" : O, "y" : 200}
+      "position" : {
+        "x" : 0,
+        "y" : 200}
     }
   ],
   "elements" : [

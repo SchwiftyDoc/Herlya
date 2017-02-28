@@ -5,16 +5,18 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
-    <canvas id="gameView"></canvas>
-
+    <canvas id="playersView"></canvas>
+    <canvas id="elementsView"></canvas>
     <div id="toLoad" class="hidden">
         <!-- Images -->
         <img src="/assets/svg/characters/perso.svg" />
+        <img src="/assets/svg/elements/water.svg" />
         <img src="/assets/svg/elements/rock.svg" />
         <!-- Frontend JavaScripts -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"
                 integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
                 crossorigin="anonymous"></script>
+        <script src="/assets/js/classes/game.js"></script>
         <script src="/assets/js/classes/player.js"></script>
         <script src="/assets/js/classes/map.js" ></script>
         <script src="/assets/js/classes/element.js" ></script>

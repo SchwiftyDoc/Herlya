@@ -3,12 +3,25 @@ body {
     margin: 0px;
 }
 
-#gameView {
+canvas {
     position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#elementsView {
     margin: 0px;
     padding: 0px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    z-index: 1;
+}
+
+#playersView {
+    margin: 0px;
+    padding: 0px;
+    z-index: 2;
+    background-color: transparent;
 }
 
 .hidden {

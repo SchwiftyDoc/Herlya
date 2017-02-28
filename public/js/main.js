@@ -6,6 +6,7 @@ console.log(configuration.canvasId)*/
 
 let image = new Image()
 image.src = "/assets/svg/characters/perso.svg"
+let ctx
 
 // Test draw char*/
 
